@@ -1,0 +1,16 @@
+<h1>Items</h1>
+<p><%= link_to "Add a new found item", new_item_path%></p>
+
+<div class="items">
+  <% @items.each do |item| %>
+  <div class="item">
+    <h2> Found Item: <%= link_to item.title, item_path(item.id)%></h2>
+    <%= image_tag(item.picture, width:300) %>  </p>
+    <p><strong>Found by:</strong> <%= item.user.email %></p>
+    <p><strong>Date:</strong> <%= item.date %> <p>
+    <p><strong>Location:</strong> <%=item.location%> </p>
+    <p><strong>Description:</strong><br><%=item.description%></p>
+  </div>
+  <hr/>
+  <% end %>
+</div>

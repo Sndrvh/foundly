@@ -1,0 +1,15 @@
+<h1>Found.ly item: <%= @item.title %></h1>
+<h2>Found by: <%= @item.user.email %></h2>
+<br>
+<p><strong>Date:</strong> <%= @item.date %> <p>
+<p><strong>Location:</strong> <%= @item.location%>
+<p><strong>Description:</strong><br> <%= @item.description %> <p>
+<br>
+<p><strong>Picture:</strong><br><%= image_tag(@item.picture, width:300) %> <p>
+<br>
+<hr>
+<%=link_to "Edit this item", edit_item_path(@item)%>
+<br>
+<%=link_to "Delete this item", item_path(@item), method: :delete, data: {confirm: 'Are you sure?'}%>
+<br>
+<%= link_to "Back to items index", items_path%>

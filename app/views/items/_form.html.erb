@@ -1,0 +1,40 @@
+<%= form_with(model: item, local:true) do |form| %>
+
+<% if item.errors.any? %>
+<ul>
+  <% item.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<div class="field">
+  <%= form.label :title %>
+  <%= form.text_field :title, id: :item_title %>
+</div>
+
+<div class="field">
+  <%= form.label :location %>
+  <%= form.text_field :location, id: :item_location %>
+</div>
+
+<div class="field">
+  <%= form.label :date %>
+  <%= form.date_select :date, id: :item_date %>
+</div>
+
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_area :description, id: :item_description %>
+</div>
+
+<div class="field">
+  <%= form.label :picture %>
+  <%= form.file_field :picture, id: :item_picture %>
+</div>
+
+<div class="action">
+  <%= form.submit %>
+</div>
+
+<% end %>
